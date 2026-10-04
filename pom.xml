@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot Parent Manages Spring Boot dependency versions automatically -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.1.1</version>
+        <relativePath/>
+    </parent>
+
+
+    <!-- Project Information -->
+    <groupId>com.Employement</groupId>
+    <artifactId>Employment_CRUD</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>Employment_CRUD</name>
+    <description>Employee Management CRUD REST API</description>
+
+
+    <!-- Java Version -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+
+    <dependencies>
+
+
+        <!--
+            1. Spring Data JPA
+
+            Used for:
+            - Database interaction
+            - JPA
+            - Hibernate
+            - JpaRepository
+            - Entity management
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+
+        <!--
+            2. Spring Validation
+
+            Used for validating API request data.
+
+            Examples:
+            @NotNull
+            @NotBlank
+            @Email
+            @Size
+            @Positive
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+
+        <!--
+            3. Spring Web MVC
+
+            Used for creating REST APIs.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
+
+
+        <!--
+            4. MySQL Driver
+        -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <!--
+            5. Lombok
+        -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <!--
+            6. Spring Boot DevTools
+
+            Provides development-time features such as
+            automatic application restart when code changes.
+
+            This is useful while developing locally.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+
+        <!--
+            7. Spring Boot Test
+
+            Used for writing automated tests.
+
+            Provides commonly used testing libraries such as:
+            - JUnit
+            - Mockito
+            - AssertJ
+            - Spring Test
+            - Spring Boot Test
+            - Hamcrest
+            - JSONassert
+
+            We only need this one general test dependency
+            for our project initially.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Spring MVC controller testing -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring Data JPA Test
+     Used for testing JPA repositories with @DataJpaTest -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 9. H2 Database
+    		Used as an in-memory database during tests.
+    		It prevents repository tests from modifying MySQL data.
+		-->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+    </dependencies>
+
+
+	<!-- Build Configuration -->
+    <build>
+
+        <plugins>
+
+			<!--
+                Spring Boot Maven Plugin
+
+                Used to:
+                - Run the Spring Boot application
+                - Package the application as a JAR
+                - Create an executable JAR
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
